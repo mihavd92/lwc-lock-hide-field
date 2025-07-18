@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="Enter PIN">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-2 slds-align_absolute-center" style="display:flex; justify-content:center; align-items:center;">
+                    <img src={lockImageUrl} alt="Padlock" style="width: 100px; height: 100px;" />
+                </div>
+
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input
+                        placeholder="Enter 4-digit PIN"
+                        value={pin}
+                        onchange={handleInput}
+                        maxlength="4"
+                        type="password"
+                        class="slds-m-bottom_small">
+                    </lightning-input>
+
+                    <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center" style="width: 100%;">
+                        <lightning-button
+                            label="Submit"
+                            variant="brand"
+                            onclick={handleSubmit}>
+                        </lightning-button>
+
+                        <lightning-button
+                            label="Hide"
+                            variant="neutral"
+                            onclick={handleHide}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+
+    <template if:true={showAdminModal}>
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-modal__title">Set New User PIN</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input
+                        label="New User PIN"
+                        value={newUserPin}
+                        onchange={handleNewPinChange}
+                        maxlength="4"
+                        type="password">
+                    </lightning-input>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={closeAdminModal}></lightning-button>
+                    <lightning-button label="Save" variant="brand" onclick={saveNewPin}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
