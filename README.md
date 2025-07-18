@@ -5,18 +5,18 @@ We received a task to implement an elegant way of masking a field that shouldn't
 
 For example, on the Contact object, we have a field called Easter Egg, which we'll display only when needed. To achieve this, we'll create an additional Checkbox field - isPasswordCorrect.
 
-<img width="977" height="281" alt="image" src="https://github.com/user-attachments/assets/55d4a9fd-f8b1-415f-ab2b-8f642b4366a4" />
+<img width="600" height="auto" alt="image" src="https://github.com/user-attachments/assets/55d4a9fd-f8b1-415f-ab2b-8f642b4366a4" />
 
 Next, we update the Contact page to use Dynamic Forms and set a visibility condition for the Easter Egg field based on the value of the isPasswordCorrect field. 
 
-<img width="977" height="499" alt="image" src="https://github.com/user-attachments/assets/4b35e406-c780-4973-9849-6d368334a2a2" />
+<img width="800" height="auto" alt="image" src="https://github.com/user-attachments/assets/4b35e406-c780-4973-9849-6d368334a2a2" />
 
 **Proceeding to create the LWC and Apex Controller<br />
 Our component will have the following functionality:**
 
 1️ A password input field. If the password is correct, we set the isPasswordCorrect to true, if it's incorrect - to false. The user password that grants access to the field can be stored in Custom Settings.
 
-<img width="977" height="637" alt="image" src="https://github.com/user-attachments/assets/daecc5bb-e0a7-4491-9d0a-9600cdd74613" />
+<img width="600" height="auto" alt="image" src="https://github.com/user-attachments/assets/daecc5bb-e0a7-4491-9d0a-9600cdd74613" />
 
 2️ The ability to manually hide the field when needed.
 
